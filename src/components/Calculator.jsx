@@ -22,7 +22,11 @@ export function Calculator() {
 
     /* Elimina el último valor del input */
     function Delete() {
-        setInput(input.toString().slice(0, -1));
+        if (result) {
+        setResult(result.toString().slice(0, -1));
+        } else {
+            setInput(input.toString().slice(0, -1));
+        }
     }
 
     /* El método eval, en algunos paises no reconode la , como medida decimal, por lo tanto, sustituimos todas las , por . */
